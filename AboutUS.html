@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<title>About Us - Deccan Bridge Careers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0c1f3a 0%, #1a365d 50%, #2d3748 100%);
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Hero Section with Animation */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .logo-animation-container {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        /* Different logo sizes */
+        .logo-hero {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            transform: translateY(0);
+            transition: all 0.8s ease;
+            opacity: 1;
+        }
+        
+        .logo-hero.animate {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        
+        .logo-header {
+            width: 180px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .logo-footer {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-nav {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 5px;
+            vertical-align: middle;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator span {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.
+		}
+		
+		        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+        
+        /* Header with logo on left */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 0;
+            gap: 3rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease 0.5s;
+        }
+        
+        .header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .header-content {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .logo-container {
+            flex-shrink: 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #4299e1;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.5);
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+        }
+        
+        .section {
+            background: rgba(26, 32, 44, 0.8);
+            backdrop-filter: blur(10px);
+            color: #e2e8f0;
+            padding: 4rem 0;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(74, 85, 104, 0.2);
+        }
+		
+		.section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: rgba(255,255,255,0.7);
+            background: rgba(15, 23, 42, 0.9);
+            margin-top: 4rem;
+            border-radius: 15px;
+        }
+        
+        .contact-info {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: #e2e8f0;
+        }
+        
+        /* Navigation styles */
+        .nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(74, 85, 104, 0.3);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #cbd5e0;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            background: rgba(49, 130, 206, 0.1);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .header-content {
+                text-align: center;
+            }
+            
+            .logo-hero {
+                width: 200px;
+            }
+            
+            .logo-header {
+                width: 150px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+                    
+        @media (max-width: 480px) {
+            .logo-hero {
+                width: 150px;
+            }
+            
+            .logo-header {
+                width: 120px;
+            }
+            
+            .logo-footer {
+                width: 60px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+		
+		/* Social Media Icons Styles */
+.social-section {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.3rem;
+    border: 2px solid transparent;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual platform colors */
+.social-icon.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+.social-icon.twitter:hover { background: #1da1f2; border-color: #1da1f2; }
+.social-icon.facebook:hover { background: #1877f2; border-color: #1877f2; }
+.social-icon.instagram:hover { 
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-color: transparent;
+}
+.social-icon.github:hover { background: #333; border-color: #333; }
+.social-icon.youtube:hover { background: #ff0000; border-color: #ff0000; }
+
+/* Alternative: Simple hover effect */
+.social-icon:hover {
+    background: #3182ce;
+    border-color: #3182ce;
+}
+	</style>
+</head>
+<body>
+  <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+		
+		    <img src="C:\Users\yasas\Documents\DeccanBridgeCareers.jpg" alt="Deccan Bridge Careers" class="logo">
+            <div class="nav-logo">Deccan Bridge Careers
+			</div>
+            <ul class="nav-links">
+                <li><a href="C:\Users\yasas\OneDrive\Desktop\Index.html">Home</a></li>
+		<li><a href="C:\Users\yasas\OneDrive\Desktop\AboutUS.html">About Us</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+	
+	<!-- Social Media Icons Section -->
+<div class="social-section">
+    <h3 style="text-align: center; margin-bottom: 2rem; color: #e2e8f0;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="https://linkedin.com/company/yourcompany" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/yourcompany" target="_blank" class="social-icon twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://facebook.com/yourcompany" target="_blank" class="social-icon facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://instagram.com/yourcompany" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com/yourcompany" target="_blank" class="social-icon youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+</div>
+
+<body class="font-pt-sans">
+    <!-- Announcement Bar (Mobile & Desktop Optimized) -->
+    <div class="bg-secondary text-white py-2 px-3 lg:px-4">
+        <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center text-xs sm:text-sm lg:text-sm gap-2 lg:gap-0">
+            <!-- Contact Info -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 lg:flex-row lg:items-center lg:gap-4">
+                <span class="flex items-center hover:underline cursor-pointer">
+                    <a href="mailto:careers@deccanbridge.com" class="flex items-center hover:text-primary transition-colors" onclick="window.location.href='mailto:careers@deccanbridge.com'; return false;">
+                        <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
+                        <span class="hidden xs:inline">careers@deccanbridge.com</span>
+                        <span class="inline xs:hidden">Email Us</span>
+                    </a>
+                </span>
+                <span class="flex items-center">
+                    <a href="tel:+91XXXXXXXXX" class="flex items-center hover:text-primary transition-colors" onclick="window.location.href='tel:+919705012444'; return false;">
+                        <i data-lucide="phone" class="w-4 h-4 mr-1"></i>
+                        <span>+91 XXXXXXXXX / +91 XXXXXXXXX</span>
+                    </a>
+                </span>
+            </div>
+			<!-- Add this in navigation for mobile-friendly social links -->
+
+<!-- Add this in your footer section -->
+<footer class="footer">
+    <!-- Your existing footer content -->
+    <div class="social-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <!-- Social icons here -->
+        </div>
+    </div>
+</footer>
