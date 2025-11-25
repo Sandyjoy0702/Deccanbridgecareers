@@ -615,13 +615,41 @@
 			margin: 0;
 }
 
-.mb-10 { margin-bottom: 10px; }
-.mb-20 { margin-bottom: 20px; }
-.mb-30 { margin-bottom: 30px; }
-.mb-40 { margin-bottom: 40px; }
+.chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .chat-button {
+            background: #007bff;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .chat-box {
+            display: none;
+            width: 300px;
+            height: 400px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+        }
 
     </style>
 </head>
+<a href="https://wa.me/9849771155?text=Hi%20I%20want%20to%20chat" 
+   target="_blank" 
+   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50px; text-decoration:none; z-index:1000;">
+   <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+</a>
 <body>
     <!-- Navigation -->
     <nav class="nav">
@@ -635,6 +663,20 @@
 				<li><a href="https://deccanbridgecareers.com/AboutUS.html">About Us</a></li>
                 <li><a href="#jobs">Jobs</a></li>
                 <li><a href="#contact">Contact</a></li>
+				<li><div class="social-icons; nav-logo">
+                    <a href="https://linkedin.com/company/deccanbridgecareers" target="_blank" class="social-icon linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/deccanbridgecareers" target="_blank" class="social-icon twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://facebook.com/deccanbridgecareers" target="_blank" class="social-icon facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/deccanbridgecareers" target="_blank" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div></li>
             </ul>
         </div>
     </nav>
@@ -817,14 +859,12 @@
         <div class="section" id="contact">
             <h2>Get In Touch</h2>
             <div class="contact-info">
-                <p style="font-size: 1.2rem; margin-bottom: 1rem; opacity: 0;">
-                    Ready to join our team? We'd love to hear from you.
-                </p>
-                <p>📧 careers@deccanbridge.com</p>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem; opacity;0;">Ready to join our team? We'd love to hear from you.</p>
+                <p>📧 info@deccanbridgecareers.com</p>
                 <p>📞 +91-9849771155</p>
                 <p>📍 Hyderabad, Telangana</p>
                 <p style="margin-top: 1rem;">
-                    <a href="mailto:careers@deccanbridge.com" class="btn">Email Us</a>
+                    <a href="mailto:info@deccanbridgecareers.com" class="btn">Email Us</a>
                 </p>
             </div>
         </div>
@@ -837,21 +877,20 @@
             <div class="social-section">
                 <h4 style="margin-bottom: 1.5rem; color: #e2e8f0;">Follow Our Journey</h4>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/company/deccanbridge" target="_blank" class="social-icon linkedin">
+                    <a href="https://linkedin.com/company/deccanbridgecareers" target="_blank" class="social-icon linkedin">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://twitter.com/deccanbridge" target="_blank" class="social-icon twitter">
+                    <a href="https://twitter.com/deccanbridgecareers" target="_blank" class="social-icon twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="https://facebook.com/deccanbridge" target="_blank" class="social-icon facebook">
+                    <a href="https://facebook.com/deccanbridgecareers" target="_blank" class="social-icon facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="https://instagram.com/deccanbridge" target="_blank" class="social-icon instagram">
+                    <a href="https://instagram.com/deccanbridgecareers" target="_blank" class="social-icon instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
-            
             <p>&copy; 2025 Deccan Bridge Careers. All rights reserved.</p>
             <p>deccanbridgecareers.com</p>
         </div>
@@ -970,10 +1009,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
